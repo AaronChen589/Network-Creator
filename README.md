@@ -75,7 +75,17 @@ The function must return -1 in registers v0 and v1 if the relation could not be 
 
 ### FriendNode* get_distant_friends(Network* ntwrk, char* name)
 
-A person p1 is a distant relation of p2 if p1 and p2 are not immediate friends, that is, there is no edge between p1 and p2 but there is a path in the network connecting p1 and p2 and the path has more than one edge
+A person p1 is a distant relation of p2 if p1 and p2 are not immediate friends, that is, there is no edge between p1 and p2 but there is a path in the network connecting p1 and p2 and the path has more than one edge.  For example, consider a network of 6 persons p1, p2, p3, p4, p5, p6. Suppose the friendships in the network are captured as follows:
+
+    p1   p6
+    /\  /
+  p2  p3
+  /    \
+p5      p4
+
+
+
+
 Note two people in the network can be related to each other but may not be friends. For instance, in the network above, suppose p1 and p3 are siblings instead of friends then p1 and p4 are not distant friends even if there is a path connecting p1 and p4 via p3.
 
 Assume the network passed as argument to the function is a connected graph.
@@ -88,28 +98,10 @@ struct FriendNode {
   char* name
   FriendNode* friendnode
 }
+
 Create a linked-list structure with FriendNodes in the heap and return a reference to the head of the linked list, i.e., the first element.
 
 The first attribute in FriendNode is the name of the person who is a distant friend. The second attribute is a reference to (or address of) the next distant friend node. In the example network shown above, suppose the name of person node p1 is passed as argument to get_distant_friends along with the network address. In this case, the function should return a linked list of friend nodes in $v0 such that $v0 has a reference to a FriendNode fnode1, which has the name for p4 and a reference to a FriendNode fnode2. The FriendNode fnode2 has the name of p5 and a reference to fnode3. FriendNode fnode3 has the name of p6 and null as the reference to the next element. The null element indicates the end of the linked list. The elements in the linked list do not have to be linked in the same order as specified in the current example. For instance, the linked list returned could also be linked as p5 -> p4 -> p6.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
