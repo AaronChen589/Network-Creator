@@ -77,11 +77,11 @@ The function must return -1 in registers v0 and v1 if the relation could not be 
 
 A person p1 is a distant relation of p2 if p1 and p2 are not immediate friends, that is, there is no edge between p1 and p2 but there is a path in the network connecting p1 and p2 and the path has more than one edge.  For example, consider a network of 6 persons p1, p2, p3, p4, p5, p6. Suppose the friendships in the network are captured as follows:
 
-    p1   p6
-    /\  /
-  p2  p3
-  /    \
-p5      p4
+        p1   p6
+        /\  /
+      p2  p3
+      /    \
+    p5      p4
 
 Note two people in the network can be related to each other but may not be friends. For instance, in the network above, suppose p1 and p3 are siblings instead of friends then p1 and p4 are not distant friends even if there is a path connecting p1 and p4 via p3.
 
