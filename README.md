@@ -83,9 +83,6 @@ A person p1 is a distant relation of p2 if p1 and p2 are not immediate friends, 
   /    \
 p5      p4
 
-
-
-
 Note two people in the network can be related to each other but may not be friends. For instance, in the network above, suppose p1 and p3 are siblings instead of friends then p1 and p4 are not distant friends even if there is a path connecting p1 and p4 via p3.
 
 Assume the network passed as argument to the function is a connected graph.
